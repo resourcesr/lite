@@ -3,6 +3,13 @@
 {% block body %}
     <title>Classes</title>
     <div>
-        <h1>.</h1>
+        {% for klass in cls %}
+            <div class="card">
+                 <a href="kourses/{{ klass['id'] }}" >
+                    <h3>{{ klass['name'] }}</h3>
+                    <p><i>{{ klass['cr'] }} - {{ klass['code'] }}</i></p>
+                </a>
+            </div>
+        {%endfor%}
     </div>
 {% endblock %}

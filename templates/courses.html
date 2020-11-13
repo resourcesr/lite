@@ -1,8 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
+
     <title>Courses</title>
     <div>
-        <h1>.</h1>
+        {% for sem in range(1, 8) %}
+            <h3 class="center">Sem {{sem}}</h3>
+            {% for course in kes %}
+                {% if sem == course['semstor'] %}
+                <div class="card center">
+                    <a href="/resources/{{ course['id'] }}" >
+                        <h3>{{ course['title'] }}</h3>
+                        <p><i>{{ course['code'] }} - {{ course['teacher'] }}</i></p>
+                    </a>
+                </div>
+                {% endif %}
+            {%endfor%}
+        {%endfor%}
     </div>
 {% endblock %}

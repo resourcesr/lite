@@ -11,5 +11,7 @@ class resources(firebase):
         data = []
         snapshots = firestore_db.collection("subjects/courses/resources").where("course_id", "==", id).get()
         for snapshot in snapshots:
-            data.append(snapshot.to_dict())
+            d = snapshot.to_dict()
+            d['id'] = snapshot.id
+            data.append(d)
         return data
