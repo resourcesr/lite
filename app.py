@@ -20,8 +20,14 @@ def classes(department):
 def kourses(klass):
     c = courses()
     kes = c.getByClassId(klass)
-    print(kes)
     return render_template("courses.html", kes=kes)
+
+
+@app.route("/res/<course>")
+def res(course):
+    r = resources()
+    resource = r.getByCourseId(course)
+    return render_template("resources.html", resource=resource)
 
 
 if __name__ == '__main__':

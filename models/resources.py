@@ -1,10 +1,7 @@
-from .firebase import firebase
 from firebase_admin import firestore
 
 
-class resources(firebase):
-    def __init__(self):
-        super().__init__()
+class resources:
 
     def getByCourseId(self, id):
         firestore_db = firestore.client()

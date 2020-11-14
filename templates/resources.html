@@ -3,6 +3,16 @@
 {% block body %}
     <title>Resources</title>
     <div>
-        <h1>.</h1>
+       {% for res in resource %}
+            {% if res['delete'] != 'true' %}
+                <div class="card">
+                    <h3>{{ res['name'] }}</h3>
+                    <p><i>Uploaded: {{ res['userName'] }} - type: {{ res['type'] }}</i></p>
+                    <p>
+                        <a href="{{res['openUrl']}}" target="_blank">Open</a> - <a href="{{res['downloadUrl']}}" target="_blank">Download</a>
+                    </p>
+                </div>
+            {% endif %}
+        {% endfor %}
     </div>
 {% endblock %}

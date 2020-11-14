@@ -9,7 +9,7 @@
             {% for course in kes %}
                 {% if sem == course['semstor'] %}
                 <div class="card center">
-                    <a href="/resources/{{ course['id'] }}" >
+                    <a href="/res/{{ course['id'] }}" >
                         <h3>{{ course['title'] }}</h3>
                         <p><i>{{ course['code'] }} - {{ course['teacher'] }}</i></p>
                     </a>
