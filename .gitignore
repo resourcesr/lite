@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 *.json
-/run.sh
+run.sh
