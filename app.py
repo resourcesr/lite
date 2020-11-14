@@ -15,6 +15,7 @@ def classes(department):
     cls = k.getKlassByDepartment(department)
     return render_template("klasses.html", cls=cls)
 
+
 @app.route("/classes/kourses/<klass>")
 def kourses(klass):
     c = courses()
